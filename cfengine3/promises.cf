@@ -1,0 +1,50 @@
+###############################################################################
+#
+#   promises.cf - Basic Policy for Community
+#
+###############################################################################
+
+body common control
+
+{
+
+ bundlesequence => {
+
+                 # Common bundles first for best practice 
+                    "def",
+
+                 # Design Center
+                    "cfsketch_run",
+
+                 # Agent bundles from here
+                    "policy",
+                   };
+
+ inputs => {
+
+         # Global common bundles
+            "def.cf",
+
+         # Control body for all agents
+            "controls/cf_agent.cf",
+            "controls/cf_execd.cf",
+            "controls/cf_monitord.cf",
+            #"controls/cf_report.cf",
+            "controls/cf_runagent.cf",
+            "controls/cf_serverd.cf",
+
+         # COPBL/Custom libraries
+            "libraries/cfengine_stdlib.cf",
+
+
+         # User services from here
+	    "policy.cf",
+
+           };
+
+ version => "Community Promises.cf 3.4.0";
+
+}
+
+
+

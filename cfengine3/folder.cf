@@ -1,0 +1,7 @@
+files:
+
+"{{this.full_path}}."
+  comment => "Promise extracted from folder object {{this.name}}",
+  create => "true";
+
+
